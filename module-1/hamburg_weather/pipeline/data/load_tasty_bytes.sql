@@ -65,7 +65,7 @@ CREATE OR ALTER TABLE {{env}}_tasty_bytes.raw_pos.country
    city_id,
    city,
    city_population
-)
+);
 
 
 -- franchise table build
