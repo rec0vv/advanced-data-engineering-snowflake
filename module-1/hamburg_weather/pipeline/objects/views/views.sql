@@ -40,7 +40,7 @@ WHERE 1=1
 GROUP BY fd.date_valid_std, fd.city_name, fd.country_desc
 ORDER BY fd.date_valid_std ASC;
 
--- Expand tracking to all cities and deploy view with this new information
+-- Expand tracking to all cities and deploy view with this new information just to test
 CREATE OR REPLACE VIEW {{env}}_tasty_bytes.analytics.daily_city_metrics_v
 COMMENT = 'Daily Weather Metrics and Orders Data'
 AS
