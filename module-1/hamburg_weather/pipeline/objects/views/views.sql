@@ -7,8 +7,8 @@ SELECT
     TO_VARCHAR(hd.date_valid_std, 'YYYY-MM') AS yyyy_mm,
     pc.city_name AS city,
     c.country AS country_desc
-FROM WEATHER_SOURCE_LLC_FROSTBYTE.onpoint_id.history_day hd
-JOIN WEATHER_SOURCE_LLC_FROSTBYTE.onpoint_id.postal_codes pc
+FROM FROSTBYTE_WEATHERSOURCE.onpoint_id.history_day hd
+JOIN FROSTBYTE_WEATHERSOURCE.onpoint_id.postal_codes pc
     ON pc.postal_code = hd.postal_code
     AND pc.country = hd.country
 JOIN {{env}}_tasty_bytes.raw_pos.country c
@@ -40,7 +40,7 @@ WHERE 1=1
 GROUP BY fd.date_valid_std, fd.city_name, fd.country_desc
 ORDER BY fd.date_valid_std ASC;
 
--- Expand tracking to all cities and deploy view with this new information
+-- Expand tracking to all cities and deploy view with this new information just to test
 CREATE OR REPLACE VIEW {{env}}_tasty_bytes.analytics.daily_city_metrics_v
 COMMENT = 'Daily Weather Metrics and Orders Data'
 AS
