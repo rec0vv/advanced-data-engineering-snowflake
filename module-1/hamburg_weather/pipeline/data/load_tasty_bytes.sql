@@ -2,13 +2,12 @@ USE ROLE accountadmin;
 
 
 /*--
-database, schema and warehouse creation
+database, schema and warehouse creation say hi to daddy
 --*/
 
 
 -- create tasty_bytes database
 CREATE OR ALTER DATABASE {{env}}_tasty_bytes;
-
 
 -- create raw_pos schema
 CREATE OR ALTER SCHEMA {{env}}_tasty_bytes.raw_pos;
